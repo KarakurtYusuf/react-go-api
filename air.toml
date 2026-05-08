@@ -1,0 +1,9 @@
+root = "." # Projenin kök dizini
+tmp_dir = "tmp" # Air aracının geçici dosyalarını saklayacağı dizin
+
+[build] # Derleme (build) yapılandırması
+bin = "main" # Proje derlendikten sonra oluşturulacak çalıştırılabilir (exe/binary) dosyanın adı
+cmd = "go build -o {{.Output}} {{.Input}}" # Projeyi derlemek için arka planda kullanılacak komut
+exclude = ["tmp/*", "client/*"] # Değişiklik takibinden (izlemeden) hariç tutulacak dizinleri belirtir
+include = ["**/*.go"] # Sadece değişikliği izlenecek dosya şablonlarını belirtir
+ignore = ["tmp/*"] # Bir derleme işlemi tetiklenirken tamamen yok sayılacak dizinleri belirtir
