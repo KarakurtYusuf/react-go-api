@@ -1,2 +1,31 @@
+# Çevre Değişkenleri ve Sırlar (Şifreler)
+.env
+
+# Frontend (React) Dosyaları
+node_modules/
+
+# Air Motoru Geçici Dosyaları
 tmp/
+
+# Derlenmiş Nesne ve Kütüphane Dosyaları
+*.o
+*.a
+*.so
+
+# Klasörler
+_obj
+_test
+vendor/
+
+# Derlenmiş Çalıştırılabilir (Binary) Dosyalar
 *.exe
+*.exe~
+*.out
+*.test
+
+# Go Özel Dosyaları
+/bin/
+
+# İşletim Sistemi Geçici Dosyaları (macOS/Windows)
+.DS_Store
+Thumbs.db
