@@ -25,6 +25,7 @@ var collection *mongo.Collection
 func main() {
 	fmt.Println("hello world")
 
+	// Motoru Çalıştırma
 	err := godotenv.Load(".env")
 	if err != nil {
 		fmt.Println("Error loading .env file:", err)
@@ -40,15 +41,17 @@ func main() {
 
 	defer client.Disconnect(context.Background())
 
+	// Bağlantıyı Test Etme(Ping)
 	err = client.Ping(context.Background(), nil)
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	fmt.Println("Connected to MongoDB!")
 
+	// Veritabanı ve Koleksiyon Seçimi
 	collection = client.Database("golang_db").Collection("todos")
 
+	// Fiber Uygulamasını Başlatma
 	app := fiber.New()
 
 	app.Get("/api/todos", getTodos)
